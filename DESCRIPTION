@@ -1,0 +1,16 @@
+Package: geoloc
+Title: Geolocation in Shiny
+Version: 0.0.0.9000
+Authors@R: person('Colin', 'Fay', email = 'contact@colinfay.me', role = c('cre', 'aut'))
+Description: Add geolocation inside your shiny app.
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github.com/ColinFay/geoloc
+BugReports: https://github.com/ColinFay/geoloc/issues
+Encoding: UTF-8
+Suggests: 
+    testthat
+Imports: 
+    attempt,
+    shiny
+RoxygenNote: 6.0.1
