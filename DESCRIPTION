@@ -13,4 +13,4 @@ Suggests:
 Imports: 
     attempt,
     shiny
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.99.9001

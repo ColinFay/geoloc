@@ -81,9 +81,10 @@ shinyApp(ui, server)
 
 ### With a button
 
-`button_geoloc` behaves a any `shiny::actionButton` (and takes the same
-parameters), except that it launches the geolocation service when it is
-clicked.
+`button_geoloc` behaves like any `shiny::actionButton` (and takes the
+same parameters), except that it launches the geolocation service when
+it is clicked. You can then pick up the coordinates with
+`myButtonId_lat` and `myButtonId_lon`.
 
 ``` r
 library(shiny)
@@ -92,19 +93,19 @@ library(leaflet)
 ui <- fluidPage(
   h2("Where Am I?"),
   tags$p("Click the button to get your location"),
-  geoloc::button_geoloc("id", "Get my Location"),
+  geoloc::button_geoloc("myBtn", "Get my Location"),
   tags$br(),
   leafletOutput("lf")
 )
 
 server <- function(input, output) {
   output$lf <- renderLeaflet({
-    req(input$geoloc_lon)
-    req(input$geoloc_lat)
+    req(input$myBtn_lon)
+    req(input$myBtn_lat)
     leaflet() %>%
       addTiles() %>%
-      setView(as.numeric(input$geoloc_lon), as.numeric(input$geoloc_lat), zoom = 17) %>%
-      addMarkers(as.numeric(input$geoloc_lon), as.numeric(input$geoloc_lat), label = "You're here!")
+      setView(as.numeric(input$myBtn_lon), as.numeric(input$myBtn_lat), zoom = 17) %>%
+      addMarkers(as.numeric(input$myBtn_lon), as.numeric(input$myBtn_lat), label = "You're here!")
   })
 }
 

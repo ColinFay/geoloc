@@ -46,6 +46,7 @@ onload_geoloc <- function(){
 #' @importFrom shiny tagList includeScript tagAppendAttributes actionButton
 
 button_geoloc <- function(inputId, label, icon = NULL, width = NULL, ...){
+  func <- paste0("getLocation(\"", inputId, "\")")
   tagList(
     includeScript(
       system.file(
@@ -55,7 +56,7 @@ button_geoloc <- function(inputId, label, icon = NULL, width = NULL, ...){
     ),
     tagAppendAttributes(
       actionButton(inputId, label, icon = icon, width = width, ...),
-      onclick = "getLocation()"
+      onclick = func
     )
   )
 
