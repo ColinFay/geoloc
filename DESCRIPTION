@@ -1,7 +1,10 @@
 Package: geoloc
 Title: Geolocation in Shiny
 Version: 0.0.0.9000
-Authors@R: person('Colin', 'Fay', email = 'contact@colinfay.me', role = c('cre', 'aut'))
+Authors@R: c(
+    person('Colin', 'Fay', email = 'contact@colinfay.me', role = c('cre', 'aut')),
+    person('John', 'Coene', email = 'jcoenep@gmail.com', role = 'ctb')
+    )
 Description: Add geolocation inside your shiny app.
 License: MIT + file LICENSE
 LazyData: true
@@ -13,4 +16,4 @@ Suggests:
 Imports: 
     attempt,
     shiny
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.99.9001
