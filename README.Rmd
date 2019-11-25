@@ -39,7 +39,9 @@ remotes::install_github("ColinFay/geoloc")
 
 This can for example be used to set the application language according to the location of the user. 
 
-### Throught `wtfismyip`
+### Throught `wtfismyip
+
+__Please get your user consent before using this__.
 
 `wtfismyip()` is a simple wrapper to the `wtfismyip.com` service.
 
@@ -65,7 +67,7 @@ server <- function(
 shinyApp(ui, server)
 ```
 
-__We strongly suggest to get your user content before using this__.
+
 
 
 ### With Native HTML5 API
