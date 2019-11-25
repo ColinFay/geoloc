@@ -1,6 +1,6 @@
 Package: geoloc
 Title: Geolocation in Shiny
-Version: 0.0.0.9000
+Version: 0.0.0.9500
 Authors@R: c(
     person('Colin', 'Fay', email = 'contact@colinfay.me', role = c('cre', 'aut')),
     person('John', 'Coene', email = 'jcoenep@gmail.com', role = 'ctb')
@@ -15,5 +15,6 @@ Suggests:
     testthat
 Imports: 
     attempt,
-    shiny
+    shiny,
+    jsonlite
 RoxygenNote: 6.1.99.9001

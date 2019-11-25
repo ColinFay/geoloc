@@ -26,10 +26,43 @@ remotes::install_github("ColinFay/geoloc")
 
 ## How it works
 
-### Getting the data
+`{geoloc}` implements multiple ways to get a user’s location.
 
-The two functions (described below) launch a prompt that asks the user
-if he is willing to share his/her location.
+This can for example be used to set the application language according
+to the location of the user.
+
+### Throught `wtfismyip`
+
+`wtfismyip()` is a simple wrapper to the `wtfismyip.com` service.
+
+``` r
+library(shiny)
+ui <- function(request){
+  tagList(
+    verbatimTextOutput("plop")
+  )
+}
+
+server <- function(
+  input, 
+  output, 
+  session
+){
+  output$plop <- renderPrint({
+    geoloc::wtfismyip()
+  })
+  
+}
+
+shinyApp(ui, server)
+```
+
+**We strongly suggest to get your user content before using this**.
+
+### With Native HTML5 API
+
+The two functions (described below) launch an alert box that asks the
+user if he is willing to share his/her location.
 
 If the user agrees, the `lat` and `long` are sent back to shiny in
 `input$geoloc_lon` and `input$geoloc_lat`.

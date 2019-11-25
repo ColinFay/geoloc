@@ -2,6 +2,7 @@
 
 export(button_geoloc)
 export(onload_geoloc)
+export(wtfismyip)
 importFrom(shiny,actionButton)
 importFrom(shiny,includeScript)
 importFrom(shiny,tagAppendAttributes)
